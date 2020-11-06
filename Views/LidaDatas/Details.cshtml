@@ -1,0 +1,54 @@
+﻿@model NTest.Models.LidaData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LidaData</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageURL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SlopeAngle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SlopeAngle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageClock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageClock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LidarClock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LidarClock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PrependDist)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrependDist)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GroudDist)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GroudDist)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
