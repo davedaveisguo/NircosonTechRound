@@ -13,7 +13,7 @@
         <div class="mb-2"></div>
         <div class="custom-file col">
             <input type="file" class="custom-file-input" id="fileInp"
-                   name="File"  accept=".txt, .word">
+                   name="File" accept=".txt, .word">
             <label class="custom-file-label" for="fileInp">Load LiDAR Data</label>
         </div>
         <hr />
@@ -65,7 +65,16 @@
             <div class="form-group">
                 <img id="blah" src="~/uploads/@Model?.ImageURL" alt="your image" style="width: 500px;height: auto;" />
             </div>
+
         </form>
+        @* drop zone test *@
+            <form action="/file-upload"
+                  class="dropzone"
+                  id="my-awesome-dropzone">
+                <input type="file" name="file" />
+            </form>
+
+        
     </div>
 </div>
 
@@ -78,12 +87,13 @@
 
     <script>
 
-        var dragImgUpload = new DragImgUpload("#drop_area", {
-            callback: function (files) {
-                var file = files[0];
-                console.log(file.name);
-            }
-        })
+
+        Dropzone.options.myAwesomeDropzone = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFilesize: 2, // MB
+            autoProcessQueue: false // stop sending to server side
+        };
+
 
         $('#imgInp').change(function () {
             readURL(this);
